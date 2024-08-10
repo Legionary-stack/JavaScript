@@ -1,0 +1,161 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+	<title>Hamming</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--
+	<link type="text/css" rel="stylesheet" href="file.css">
+	<script type="text/javascript" src="file.js"></script>
+	-->
+<script type="text/javascript" src="https://gc.kis.v2.scr.kaspersky-labs.com/FD126C42-EBFA-4E12-B309-BB3FDD723AC1/main.js?attr=LndOZW_kmcZ3F2cUxPrHsSndwy5IhHgl_9LWSOybYqAiqC3eMPveQ4Uf723971Ko4klGGa0nz4NIS3g-Bd62Mvwkc7-TWV3mMkTI18ZSU2-L-k_Jq0W5r740kzT8WsqPuSth_0P-vl38oDZLjJ-yUf4y-d9YfglPOD1cjxP58fqXaZr9OhNYTtqYZMtFaPJAUxG3CHWA7Eba30klUX24OtJPvXjvpkeE0FEU6EE378I-i-TajIVJgwvyDT5YZBKUje4oAhsInU0QME8xIWvW9RwJS3-p5B_oZiDiXoV2VYyMIqLk37maI_YwPv0kdeov8oEAxrOhDtqV4kMrTFZ70yotB3G2ZiJb_5E_rDpjwHJyWyltNuAEX-lZ0K0CXcBUDvKBuKkmZ5M1WypmWuKhFDw2aKzShJi8atMFjwnZpL_z175WA3RHtRfXFrc5OOStxuiKVkN4JpG0KB-P1kEtaC8e7eo1n9NPjSf0QbEQTmSbq-PbPYN0GplgcLnDuG2JDpcTbwokoVdKD1B5JeiaeHlD3ofQEB3uslC6aquzK-O-7MdssbZB0s54_GHj-KGVrZJWlHeXDWeDx86cWHfRzSA9nodjRZEbillMMxrNZcvPuUJrdziOwfQMsKlQRCHQ-01ZhNK5jYAotxBk3h1dKU1isB2KQz4rqOsDfVOwpVpQ0yfQ5y-M7oQIP2irlWluFTIEjEdgREtH2M_hwLRp59oFTdzPW-FVAGUeTSFrCNMn2eXcA5tv3ZimFcjMoq1Eh4BAKWsfFw_dB8tRG4yjaJMAlYiEWd3dkBh2FiyD76WAU9WW32_Ma8APp1rHxCO3Pjn3fSgRDPyucUyALsjUShg3s2DwXD2cXaZm-MYDMD_OXBTnKUJ3qm3sZQklgt678fFAMRV9mH2H7i5__7lIviWHJyy_NNmF5kICR3owr-uorDiNPtAlbsSqJ0V3LPKd7ZVOL5T3dkJYnMjhFz4DdJ_HX2NVfwCcTfbj5Pv1Qh0" charset="UTF-8"></script><link rel="stylesheet" crossorigin="anonymous" href="https://gc.kis.v2.scr.kaspersky-labs.com/E3E8934C-235A-4B0E-825A-35A08381A191/abn/main.css?attr=aHR0cHM6Ly9zNDQwdmxhLnN0b3JhZ2UueWFuZGV4Lm5ldC9yZGlzay8zY2JhMmI1OTM0NzYzMmI1YjI1YTZlZTA2ZTUyM2Q3ZDI0NzhmY2Y1M2IyMDQ3NzMxMzJiZDE3ZWNkNWRhM2FkLzY1NGQ1MTZjL193S1UyYWNFM1M0Nndnb21LVWF4X0I4OUdEUVFQRGd1T3RBVnc5d2Y5U3c4Ukp3SEhFRzV2d001TGNKU1Q2MlNVVkNONzBOanp0QWxUZnFrREVzSGxRPT0_dWlkPTAmZmlsZW5hbWU9aGFtbWluZy5odG1sJmRpc3Bvc2l0aW9uPWF0dGFjaG1lbnQmaGFzaD1ZdU9weEphb1MwZHVseSUyYmk0aXdwcUswdjExdzdzRXIwSiUyYlJNTWFGd1U1NCUzZCZsaW1pdD0wJmNvbnRlbnRfdHlwZT10ZXh0JTJmaHRtbCZvd25lcl91aWQ9MjYyNzE1NTcmZnNpemU9MTQzOSZoaWQ9MjQxODQwNDJkYjk3ZDk3ZDM5NWYwNmIzYWQ0ZDg1MjYmbWVkaWFfdHlwZT1kZXZlbG9wbWVudCZ0a252PXYyJnJ0b2tlbj1XS0pxZGVOU2tIbVYmZm9yY2VfZGVmYXVsdD1ubyZ5Y3JpZD1uYS1hNzhiOGUwYjBhODgxNTFlNWVkMTUwZDkyNDUxMzZiMi1kb3dubG9hZGVyMTJmJnRzPTYwOWJmMDdhNjMzMDAmcz04YzQyYjExYTNiMDg4YzUxMTQyZGQ4NmQ2ZmNmODY0NWZiYzUwZGY2MzQ2YTY5YTQzYjEyMjBmY2NiOGNjZTllJnBiPVUyRnNkR1ZrWDEtSnRmcy1yLXRLdW1oSFNYOG9kTzlSeWx0RWNfOU9PeWhiMnpnWW0wNHVDS3R6VUk5S2hLbWpoVWN4c3lycGUxZm12T0tET0RPVG8wOGo3aFNObnhieUFJby1YUHEzR1pV"/></head>
+<body>
+	<style>
+	.content {
+		margin: 10px;
+		}
+	.row {
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	input[type="text"] {
+		background: #fff;
+		border: 1px solid #cbcbcb;
+		font-family: Arial;
+		font-size: 14px;
+		max-width: 100%;
+		outline: none;
+		padding: 2px 10px;
+		width: 10%;
+		box-shadow: none;
+		border-radius: 5px;
+		margin-bottom: 5px;
+	}
+	input[type="button"] {
+		font-weight: bold;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	label {
+		display: block;
+		font-weight: normal;
+		padding: 2px;
+	}
+</style>
+	<div class="content">
+		<h1>Hamming</h1>
+		<div class="row">
+			<label>Original message</label>
+			<input type='text' id='mes' maxlength='4'>
+			<input type='button' onclick='code()' value='Code'>
+		</div>
+		<div class="row">
+			<label>Coded message</label>
+			<input type='text' id='mes_cod' maxlength='7'>
+			<input type='button' onclick='decode_m()' value='Decode'>
+		</div>
+		<div class="row">
+			<label>Decoded message</label>
+			<input type='text' id='mes_decod'>
+			<span id="error"></span>
+		</div>
+	</div>
+
+<script>
+	function code() {
+		let message = document.getElementById('mes').value;
+		if (!/^[01]+$/.test(message)) {
+		    alert('Input must only contain 0 and 1.');
+		    return;
+		}
+
+		if(message.length != 4){
+			alert('Minimum coding length 4 digits');
+		    return;
+		}
+
+		document.getElementById('mes_cod').value = encode(message);
+	}
+
+	function decode_m() {
+		let code_message = document.getElementById('mes_cod').value;
+		if (!/^[01]+$/.test(code_message)) {
+		    alert('Input must only contain 0 and 1.');
+		    return;
+		}
+		if(code_message.length != 7){
+			alert('Minimum decoding length 7 digits');
+		    return;
+		}
+		let data = decode(code_message)
+		let decode_message = data[0]
+		let error = data[1]
+		document.getElementById('mes_decod').value = decode_message;
+		document.getElementById('error').innerText = error;
+	}
+
+	function encode(s) {
+		A = +s[0]
+		B = +s[1]
+		C = +s[2]
+		D = +s[3]
+
+		p = A ^ B ^ D
+		q = A ^ C ^ D
+		r = B ^ C ^ D
+		mes = [A,B,C,D,p,q,r]
+    	return mes.join("")
+
+	}
+	function decode(s) {
+		A = +s[0]
+		B = +s[1]
+		C = +s[2]
+		D = +s[3]
+
+		x = +s[4]
+		y = +s[5]
+		z = +s[6]
+
+		g = A ^ B ^ D ^ x
+		b = A ^ C ^ D ^ y
+		r = B ^ C ^ D ^ z
+		gbr = ""+g+b+r
+		let error, ans
+
+		if(gbr != '000') {
+			error = "error"
+			if(r == 0){
+				if(b == 0 && g != 0) {
+					x^=1
+				}
+				else if(b != 0 && g == 0) {
+					y^=1
+				}
+				else if(b != 0 && g != 0) {
+					A^=1
+				}
+			}
+			else {
+				if(b == 0 && g == 0) {
+					z^=1
+				}
+				else if (b == 0 && g != 0){
+					B^=1
+				}
+				else if (b != 0 && g == 0){
+					C^=1
+				}
+				else if (b != 0 && g != 0){
+					D^=1
+				}
+			}
+		}
+		else
+			error = "no errors"
+	ans = ""+A+B+C+D
+    return [ans,error];
+	}
+</script>
+</body>
+</html>
